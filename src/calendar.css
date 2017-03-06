@@ -1,0 +1,219 @@
+.fiui-calendar {
+  overflow: hidden;
+  text-align: center;
+  padding: 0;
+  font-size: 14px;
+  line-height: 24px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 999;
+  background: #fff;
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.fiui-calendar.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.fiui-headContainer {
+  background: transparent;
+  color: rgba(0,0,0,0.9);
+  fill: rgba(0,0,0,0.9);
+  height: 28px;
+  line-height: 24px;
+  text-align: center;
+  position: relative;
+  user-select: none;
+  border-top: 1px solid #e6e6e6;
+}
+.fiui-prev-month,
+.fiui-next-month {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  height: 16px;
+  line-height: 16px;
+}
+.fiui-prev-month i,
+.fiui-next-month i {
+  position: relative;
+}
+.fiui-prev-month.fiui-prev-month,
+.fiui-next-month.fiui-prev-month {
+  left: calc(3.57% - 1.5px);
+}
+.fiui-prev-month.fiui-next-month,
+.fiui-next-month.fiui-next-month {
+  right: calc(3.57% - 1.5px);
+}
+.fiui-prev-month:hover,
+.fiui-next-month:hover {
+  color: #12C286;
+}
+.fiui-prev-month:hover svg,
+.fiui-next-month:hover svg {
+  fill: #12C286;
+}
+.fiui-prev-month svg,
+.fiui-next-month svg {
+  width: 14px;
+}
+.fiui-prev-month svg path,
+.fiui-next-month svg path {
+  transition: fill 0.1s;
+  fill: inherit;
+}
+.fiui-current-month {
+  font-size: 135%;
+  line-height: inherit;
+  font-weight: 300;
+  color: inherit;
+  position: absolute;
+  width: 75%;
+  left: 12.5%;
+  top: 5px;
+  display: inline-block;
+  text-align: center;
+}
+.fiui-current-month span.cur-month {
+  font-family: inherit;
+  color: inherit;
+  display: inline-block;
+  margin-left: 7px;
+  padding: 0;
+}
+.fiui-current-month span.cur-month:hover {
+  background: rgba(0,0,0,0.05);
+}
+.fiui-current-month input.cur-year {
+  background: transparent;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: default;
+  padding: 0 0 0 0.5ch;
+  margin: 0;
+  display: inline;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: inherit;
+  height: initial;
+  border: 0;
+  border-radius: 0;
+  vertical-align: initial;
+}
+.fiui-current-month input.cur-year:focus {
+  outline: 0;
+}
+.fiui-current-month input.cur-year[disabled],
+.fiui-current-month input.cur-year[disabled]:hover {
+  font-size: 100%;
+  color: rgba(60,63,64,0.5);
+  background: transparent;
+  pointer-events: none;
+}
+.fiui-bodyContainer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.fiui-weekdays {
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+}
+.fiui-days {
+  padding: 0;
+  outline: 0;
+  text-align: left;
+  padding: 1px 0 0 0;
+  border-right: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.fiui-day {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 150px;
+  box-sizing: border-box;
+  color: #404848;
+  cursor: pointer;
+  font-weight: 400;
+  width: 14.2857143%;
+  flex-basis: 14.2857143%;
+  max-width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+.fiui-day.today {
+  border-color: #12C286;
+}
+.fiui-day.selected {
+  background: #12C286;
+  color: #fff;
+  border-color: #12C286;
+}
+.fiui-day.prevMonthDay,
+.fiui-day.nextMonthDay {
+  color: rgba(0,0,0,0.15);
+  background: transparent;
+  border-color: #e9e9e9;
+  cursor: default;
+}
+span.fiui-weekday {
+  cursor: default;
+  font-size: 90%;
+  color: rgba(117,117,117,0.54);
+  height: 27.333333333333332px;
+  line-height: 24px;
+  margin: 0;
+  background: transparent;
+  text-align: center;
+  display: block;
+  float: left;
+  width: 14.28%;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 3.333333333333333px;
+}
+span.fiui-day {
+  border-radius: 0 !important;
+  border: 1px solid #e9e9e9;
+  margin: -1px 0 0 -1px;
+  max-width: none;
+  flex-basis: calc(14.28571% + 1px);
+  width: calc(14.28571% + 1px);
+}
+span.fiui-day:nth-child(7n) {
+  border-right: 0;
+}
+span.fiui-day:nth-child(n+36) {
+  border-bottom: 0;
+}
+span.fiui-day.today:not(.selected) {
+  border-color: #e9e9e9;
+  border-bottom-color: #12C286;
+}
+span.fiui-day.today:not(.selected):hover {
+  border-color: #f64747;
+}
+span.fiui-day.today,
+span.fiui-day.selected {
+  z-index: 2;
+}
