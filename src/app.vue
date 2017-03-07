@@ -6,7 +6,7 @@
 </template>
 
 <script lang="babel">
-  import Calendar from './src/index'
+  import Calendar from '../lib/index'
 
   export default {
     data() {
@@ -43,6 +43,7 @@
     background: #ffffff;
   }
   .date input {
+    border: 0;
     font-size: 14px;
     line-height: 22px;
     margin-left: 25px;

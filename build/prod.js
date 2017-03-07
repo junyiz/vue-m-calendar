@@ -1,12 +1,13 @@
+const path = require('path');
 let merge = require('webpack-merge');
-let baseWebpackConfig = require('./base');
+let baseConf = require('./base');
 
-let config = merge(baseWebpackConfig, {
-  entry: './src/index.js'
+module.exports = merge(baseConf, {
+  entry: './lib/index.js',
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'vue-m-calendar.js',
+    library: 'VueMCalendar',
+    libraryTarget: 'umd'
+  }
 });
-
-config.output.filename = 'vue-m-calendar.js';
-config.output.library = 'VueMCalendar';
-config.output.libraryTarget = 'umd';
-
-module.exports = config;

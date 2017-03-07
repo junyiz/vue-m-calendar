@@ -1,27 +1,18 @@
 const path = require('path');
-let merge = require('webpack-merge');
 let baseConf = require('./base');
+let merge = require('webpack-merge');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(baseConf, {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, '../'),
+    filename: 'demo.js'
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map',
   plugins: [
     new HtmlwebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html',
+      filename: 'demo.html',
       inject: true
     })
   ]

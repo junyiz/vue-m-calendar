@@ -42,7 +42,9 @@ methods: {
 }
 ```
 
-# Options
+# Demo
+
+http://junyiz.github.io/vue-m-calendar
 
 # License
 MIT
