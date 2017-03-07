@@ -6,8 +6,7 @@
 </template>
 
 <script lang="babel">
-  //import Calendar from './src/index'
-  import Calendar from './dist/vue-m-calendar'
+  import Calendar from './src/index'
 
   export default {
     data() {

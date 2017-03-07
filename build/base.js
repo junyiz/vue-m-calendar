@@ -11,23 +11,18 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: [['es2015', {modules: false}]] //不要把ES6的注入模块方法转成CommonJS
-          }
-        }]
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [['es2015', {modules: false}]]
+        }
       },
       {
         test: /\.vue$/,
-        exclude: /(node_modules)/,
-        use: [{
-          loader: 'vue-loader',
-          options: {
-            'css': 'vue-style-loader!css-loader'
-          }
-        }]
+        loader: 'vue-loader',
+        options: {
+          'css': 'vue-style-loader!css-loader'
+        }
       }
     ]
   },

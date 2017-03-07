@@ -19,7 +19,6 @@ npm install vue-m-calendar --save
 ```
 
 ```JavaScript
-<script lang="babel">
 import Calendar from 'vue-m-calendar';
 export default {
 data() {
@@ -41,7 +40,6 @@ methods: {
   }
 }
 }
-<script>
 ```
 
 # Options
