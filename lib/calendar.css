@@ -27,32 +27,26 @@
   color: rgba(0,0,0,0.9);
   fill: rgba(0,0,0,0.9);
   height: 28px;
-  line-height: 24px;
-  text-align: center;
+  line-height: 28px;
+  text-align: left;
   position: relative;
   user-select: none;
   border-top: 1px solid #e6e6e6;
 }
+.fiui-prev-year,
+.fiui-next-year,
 .fiui-prev-month,
 .fiui-next-month {
   text-decoration: none;
   cursor: pointer;
-  position: absolute;
-  top: 10px;
-  height: 16px;
-  line-height: 16px;
+  line-height: 28px;
+  width: 40px;
 }
+.fiui-prev-year i,
+.fiui-next-year i,
 .fiui-prev-month i,
 .fiui-next-month i {
   position: relative;
-}
-.fiui-prev-month.fiui-prev-month,
-.fiui-next-month.fiui-prev-month {
-  left: calc(3.57% - 1.5px);
-}
-.fiui-prev-month.fiui-next-month,
-.fiui-next-month.fiui-next-month {
-  right: calc(3.57% - 1.5px);
 }
 .fiui-prev-month:hover,
 .fiui-next-month:hover {
@@ -62,63 +56,39 @@
 .fiui-next-month:hover svg {
   fill: #12C286;
 }
+.fiui-prev-year svg,
+.fiui-next-year svg,
 .fiui-prev-month svg,
 .fiui-next-month svg {
   width: 14px;
 }
+.fiui-prev-year svg path,
+.fiui-next-year svg path,
 .fiui-prev-month svg path,
 .fiui-next-month svg path {
   transition: fill 0.1s;
   fill: inherit;
 }
+.fiui-current-year,
 .fiui-current-month {
   font-size: 135%;
   line-height: inherit;
   font-weight: 300;
   color: inherit;
-  position: absolute;
-  width: 75%;
-  left: 12.5%;
-  top: 5px;
-  display: inline-block;
+  width: 50%;
+  display: -webkit-inline-flex;
+  display: inline-flex;
   text-align: center;
 }
+.fiui-current-year span.cur-year,
 .fiui-current-month span.cur-month {
   font-family: inherit;
   color: inherit;
   display: inline-block;
   margin-left: 7px;
   padding: 0;
-}
-.fiui-current-month span.cur-month:hover {
-  background: rgba(0,0,0,0.05);
-}
-.fiui-current-month input.cur-year {
-  background: transparent;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: default;
-  padding: 0 0 0 0.5ch;
-  margin: 0;
-  display: inline;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 300;
-  line-height: inherit;
-  height: initial;
-  border: 0;
-  border-radius: 0;
-  vertical-align: initial;
-}
-.fiui-current-month input.cur-year:focus {
-  outline: 0;
-}
-.fiui-current-month input.cur-year[disabled],
-.fiui-current-month input.cur-year[disabled]:hover {
-  font-size: 100%;
-  color: rgba(60,63,64,0.5);
-  background: transparent;
-  pointer-events: none;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .fiui-bodyContainer {
   width: 100%;

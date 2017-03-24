@@ -1,5 +1,5 @@
 # vue-m-calendar
-Calendar component for Vue.js
+Calendar component for Vue.js(2.0+)
 
 # Install
 
