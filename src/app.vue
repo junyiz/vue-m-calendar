@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="date">日期 <input type="text" placeholder="请输入日期" :value="value" @click="showCalendar"></div>
+    <div class="date">日期 <input type="text" readonly="readonly" placeholder="请输入日期" :value="value" @click="showCalendar"></div>
     <calendar :show="calendarShow" format="yyyy-MM-dd" @selected="selectedHandler"></calendar>
   </div>
 </template>
