@@ -1,6 +1,6 @@
 {
   "name": "vue-m-calendar",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Calendar component for Vue.js(2.0+)",
   "main": "./dist/vue-m-calendar.js",
   "scripts": {
