@@ -13,7 +13,7 @@ npm install vue-m-calendar --save
 <template>
   <div>
     <div class="date">日期 <input type="text" placeholder="请输入日期" :value="value" @click="showCalendar"></div>
-    <calendar :show="calendarShow" format="yyyy-MM-dd" @selected="selectedHandler"></calendar>
+    <calendar title="选择日期" format="yyyy-MM-dd" :show="calendarShow" :options="calendarOpts" @selected="selectedHandler" @cancel="cancelHandler"></calendar>
   </div>
 </template>
 ```
@@ -24,7 +24,12 @@ export default {
 data() {
   return {
     value: '',
-    calendarShow: false
+    calendarShow: false,
+    calendarOpts: {
+      disabledDate(time) {
+        return time.getTime() < Date.now() - 8.64e7;
+      }
+    }
   }
 },
 components: {
@@ -36,6 +41,9 @@ methods: {
   },
   selectedHandler(date) {
     this.value = date;
+    this.calendarShow = false;
+  },
+  cancelHandler() {
     this.calendarShow = false;
   }
 }
